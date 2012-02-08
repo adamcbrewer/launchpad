@@ -7,8 +7,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
-	<!-- Use the .htaccess and remove these lines to avoid edge case issues.
-	   More info: h5bp.com/b/378 -->
+	<!-- Use the .htaccess and remove these lines to avoid edge case issues. More info: h5bp.com/b/378 -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
 	<title></title>
@@ -41,15 +40,17 @@
 	<!-- Mobile viewport optimized: j.mp/bplateviewport -->
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 
-	<link href="assets/css/normalize.css" rel="stylesheet"> <!-- https://github.com/necolas/normalize.css/blob/master/normalize.css -->
-	<!-- <link href="assets/css/reset.css" rel="stylesheet"> --> <!-- reset with clearfix -->
+	<link href="assets/css/reset.css" rel="stylesheet"> <!-- reset with clearfix -->
 	<link href="assets/css/core.css" rel="stylesheet"> <!-- core stylesheet -->
 
-	<script src="assets/js/modernizr.min.js?v=2.0.6"></script> <!-- Always check for latest version -->
+	<script src="assets/js/libs/modernizr.min.js?v=2.5.0"></script> <!-- Always check for latest version -->
 
 </head>
 <body>
 	
+	<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6. chromium.org/developers/how-tos/chrome-frame-getting-started -->
+	<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
 	<div id="wrapper">
 			
 		<header id="header">
@@ -60,7 +61,7 @@
 			
 		</header> <!-- #header -->
 			
-		<section id="content">
+		<section role="main" id="content">
 			
 			<article>
 				
@@ -76,7 +77,7 @@
 	
 	<!-- Grab Google mootools lib, fall back to local if offline -->
 	<script src="https://ajax.googleapis.com/ajax/libs/mootools/1.4.1/mootools-yui-compressed.js"></script>
-	<script>window.MooTools || document.write('<script src="assets/js/mootools-core.min.js?v=1.4.1"><\/script>')</script>
+	<script>window.MooTools || document.write('<script src="assets/js/libs/mootools-core.min.js?v=1.4.1"><\/script>')</script>
 	<script src="assets/js/script.js"></script>
 
 	<script type="text/javascript" charset="utf-8">
@@ -96,21 +97,17 @@
 	</script>
 
 
-	<!-- Change UA-XXXXX-X to be your site's ID -->
+	<!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
+	mathiasbynens.be/notes/async-analytics-snippet -->
 	<script>
-	window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
-	Modernizr.load({
-		load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
-	});
+		var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
 	</script>
 	
 	
-	<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
-		chromium.org/developers/how-tos/chrome-frame-getting-started -->
-	<!--[if lt IE 7 ]>
-		<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-		<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-	<![endif]-->
+	
 	
 </body>
 </html>

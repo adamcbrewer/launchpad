@@ -1,16 +1,13 @@
 /*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
     core.css
     Contains core styles
-    Created at: 2011-
-    Created by: Adam Brewer
+    Created at: 
+    Created by: 
 
     @credits
     This site uses a modification on the SMACSS design - http://smacss.com/ - by @snookca
 
-    SITE COLORS
-    copy				#
-   	background 			#
-	highlight 			#
+
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
 
 /* ====================================================
@@ -87,14 +84,14 @@ a:hover {}
 
 /* TWITTER BOOTSTRAP 2.0 ==================================================== */
 
-/* Landscape phones and down */
+/* Smartphones: Landscape and down (480px and below) */
 @media (max-width: 480px) {}
  
-/* Landscape phone to portrait tablet */
+/* Landscape phone to portrait tablet (480px to 768px) */
 @media (max-width: 768px) {}
 
-/* Portrait tablet to landscape and desktop */
-@media (min-width: 768px) and (max-width: 940px) {}
+/* Portrait tablet to landscape and desktop (768px to 980px)  */
+@media (min-width: 768px) and (max-width: 980px) {}
  
 /* Large desktop */
 @media (min-width: 1200px) {}
