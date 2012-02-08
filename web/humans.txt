@@ -1,0 +1,19 @@
+/* the humans responsible & colophon */
+/* humanstxt.org */
+
+
+/* TEAM */
+	Front-end developer: Adam Brewer
+		Site: adamcbrewer.com
+		Twitter: @adamcbrewer
+		Location: London, UK
+
+
+/* THANKS */
+	Google, bacon, coffee
+
+
+/* SITE */
+	Standards: HTML5, CSS3
+	Components: Modernizr, Mootools, html5boilerplate
+	Software: Sublime Text 2, Firebug, Mercurial
