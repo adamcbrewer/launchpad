@@ -7,8 +7,25 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
+
+	<!-- 	
+		Make a DNS handshake with a foreign domain, so the connection 
+		goes faster when the user eventually needs to access it. 
+		This works well for loading in assets (like images) from another domain, 
+		or a JavaScript library from a CDN.
+	-->
+	<link rel="dns-prefetch" href="//ajax.googleapis.com">
+
+	<!-- Hide page from search engines. !IMPORTANT -->
+	<meta name="robots" content="noindex">
+
 	<!-- Use the .htaccess and remove these lines to avoid edge case issues. More info: h5bp.com/b/378 -->
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!-- 
+		IE10 does not support plugins, such as Flash, in Metro Mode. 
+		If your site requires plugins, you can let users know that via the 
+		X-UA-Compatible meta element (requiresActiveX=true), which will prompt them to switch to Desktop Mode.
+	-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1,requiresActiveX=true">
 
 	<title></title>
 	
@@ -24,6 +41,20 @@
 	
 	<meta name="description" content="">
 	<meta name="keywords" content="">
+
+	<!-- 
+		Signal to search engines and others "Use this URL for this page!" 
+		Useful when parameters after a # or ? is used to control the display state of a page.
+	-->
+	<link rel="canonical" href="">
+
+	<!--
+		Enabling your application for pinning will allow IE9 users to add it to their Windows Taskbar and Start Menu.
+		Without this rule, Windows will use the page title as the name for your application.
+	-->
+	<meta name="application-name" content=""> <!-- title -->
+	<!-- Toolti-tip that shit, yo'! -->
+	<meta name="msapplication-tooltip" content=""> <!-- tooltip description -->
 	
 	<!-- FACEBOOK OPEN GRAPH -->
 	<meta property="og:title" content=""/> <!-- subject title -->
