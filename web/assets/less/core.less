@@ -1,8 +1,8 @@
 /*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
     core.css
     Contains core styles
-    Created at: 
-    Created by: 
+    Created at:
+    Created by:
 
     @credits
     This site uses a modification on the SMACSS design - http://smacss.com/ - by @snookca
@@ -31,10 +31,10 @@
 /* ====================================================
     BASE STYLES
 
-    Base rules are the defaults. They are almost exclusively 
-    single element selectors but it could include attribute selectors, 
-    pseudo-class selectors, child selectors or sibling selectors. 
-    Essentially, a base style says that wherever this element is on the page, 
+    Base rules are the defaults. They are almost exclusively
+    single element selectors but it could include attribute selectors,
+    pseudo-class selectors, child selectors or sibling selectors.
+    Essentially, a base style says that wherever this element is on the page,
     it should look like...
 ==================================================== */
 
@@ -54,13 +54,17 @@
 html, body {-web-font-smoothing: antialiased;}
 
 a {}
+a:link {}
+a:visited {}
 a:hover {}
+a:active {}
+a:focus {}
 
 
 /* ====================================================
     LAYOUT STYLES
 
-    Layout rules divide the page into sections. 
+    Layout rules divide the page into sections.
     Layouts hold one or more modules together.
 ==================================================== */
 
@@ -69,7 +73,7 @@ a:hover {}
 /* ====================================================
     MODULES STYLES
 
-    Modules are the reusable, modular parts of our design. 
+    Modules are the reusable, modular parts of our design.
     They are the callouts, the sidebar sections, the product lists and so on.
 ==================================================== */
 
@@ -78,11 +82,11 @@ a:hover {}
 /* ====================================================
     STATES STYLES
 
-    State rules are ways to describe how our modules or layouts will 
-    look when in a particular state. 
-    Is it hidden or expanded? Is it active or inactive? 
-    They are about describing how a module or layout looks on screens that are smaller or bigger. 
-    They are also about describing how a module might look in different 
+    State rules are ways to describe how our modules or layouts will
+    look when in a particular state.
+    Is it hidden or expanded? Is it active or inactive?
+    They are about describing how a module or layout looks on screens that are smaller or bigger.
+    They are also about describing how a module might look in different
     views like the home page or the inside page.
 ==================================================== */
 
@@ -110,13 +114,13 @@ a:hover {}
 
 /* Smartphones: Landscape and down (480px and below) */
 @media (max-width: 480px) {}
- 
+
 /* Landscape phone to portrait tablet (480px to 768px) */
 @media (max-width: 768px) {}
 
 /* Portrait tablet to landscape and desktop (768px to 980px)  */
 @media (min-width: 768px) and (max-width: 980px) {}
- 
+
 /* Large desktop */
 @media (min-width: 1200px) {}
 
@@ -158,7 +162,7 @@ a:hover {}
    Print styles.
    Inlined to avoid required HTTP connection: h5bp.com/r
    ========================================================================== */
- 
+
 @media print {
   * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
   a, a:visited { text-decoration: underline; }
