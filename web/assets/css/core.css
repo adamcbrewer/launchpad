@@ -33,10 +33,32 @@
 ::-moz-selection{ background:#333; color:#EEE; text-shadow:none; }
 ::selection { background:#333; color:#EEE; text-shadow:none; }
 
+::-webkit-input-placeholder {}
+:-moz-placeholder {}
+[type=search] {
+    /* resets webkit styling on search inputs */
+    -webkit-appearance: none;
+}
+/* Style the webkit validation message for forms */
+::-webkit-validation-bubble-message {
+    padding: 40px;
+}
+
 html, body {-web-font-smoothing: antialiased;}
 
 a {}
+a:link {}
+a:visited {}
 a:hover {}
+a:active {}
+a:focus {}
+
+input:required {}
+input:optional {}
+input:valid {}
+input:invalid {}
+input:default {}
+input:focus {}
 
 
 /* ====================================================
