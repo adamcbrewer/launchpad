@@ -1,8 +1,8 @@
 /*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
     core.css
     Contains core styles
-    Created at: 
-    Created by: 
+    Created at:
+    Created by:
 
     @credits
     This site uses a modification on the SMACSS design - http://smacss.com/ - by @snookca
@@ -31,10 +31,10 @@
 /* ====================================================
     BASE STYLES
 
-    Base rules are the defaults. They are almost exclusively 
-    single element selectors but it could include attribute selectors, 
-    pseudo-class selectors, child selectors or sibling selectors. 
-    Essentially, a base style says that wherever this element is on the page, 
+    Base rules are the defaults. They are almost exclusively
+    single element selectors but it could include attribute selectors,
+    pseudo-class selectors, child selectors or sibling selectors.
+    Essentially, a base style says that wherever this element is on the page,
     it should look like...
 ==================================================== */
 
@@ -53,6 +53,17 @@
 
 html, body { -web-font-smoothing: antialiased; }
 
+::-webkit-input-placeholder {}
+:-moz-placeholder {}
+[type=search] {
+    /* resets webkit styling on search inputs */
+    -webkit-appearance: none;
+}
+/* Style the webkit validation message for forms */
+::-webkit-validation-bubble-message {
+    padding: 40px;
+}
+
 a {}
 a:link {}
 a:visited {}
@@ -60,23 +71,25 @@ a:hover {}
 a:active {}
 a:focus {}
 
+input:required {}
+input:optional {}
+input:valid {}
+input:invalid {}
+input:default {}
 input:focus {}
+
 input:enabled {}
 input:disabled {}
 input:checked {}
 input:indeterminate {} /* un-selected radio buttons :) */
-input:required {}
-input:valid {}
-input:invalid {}
 
 ::-webkit-input-placeholder {}
 :-moz-placeholder {}
 
-
 /* ====================================================
     LAYOUT STYLES
 
-    Layout rules divide the page into sections. 
+    Layout rules divide the page into sections.
     Layouts hold one or more modules together.
 ==================================================== */
 
@@ -85,7 +98,7 @@ input:invalid {}
 /* ====================================================
     MODULES STYLES
 
-    Modules are the reusable, modular parts of our design. 
+    Modules are the reusable, modular parts of our design.
     They are the callouts, the sidebar sections, the product lists and so on.
 ==================================================== */
 
@@ -94,11 +107,11 @@ input:invalid {}
 /* ====================================================
     STATES STYLES
 
-    State rules are ways to describe how our modules or layouts will 
-    look when in a particular state. 
-    Is it hidden or expanded? Is it active or inactive? 
-    They are about describing how a module or layout looks on screens that are smaller or bigger. 
-    They are also about describing how a module might look in different 
+    State rules are ways to describe how our modules or layouts will
+    look when in a particular state.
+    Is it hidden or expanded? Is it active or inactive?
+    They are about describing how a module or layout looks on screens that are smaller or bigger.
+    They are also about describing how a module might look in different
     views like the home page or the inside page.
 ==================================================== */
 
@@ -123,7 +136,7 @@ input:invalid {}
    Print styles.
    Inlined to avoid required HTTP connection: h5bp.com/r
    ========================================================================== */
- 
+
 @media print {
   * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
   a, a:visited { text-decoration: underline; }
