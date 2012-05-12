@@ -48,13 +48,29 @@
 }
 
 
-::-moz-selection{ background:#333; color:#EEE; text-shadow:none; }
-::selection { background:#333; color:#EEE; text-shadow:none; }
+::-moz-selection{ background:#333; color:#F8F8F8; text-shadow:none; }
+::selection { background:#333; color:#F8F8F8; text-shadow:none; }
 
-html, body {-web-font-smoothing: antialiased;}
+html, body { -web-font-smoothing: antialiased; }
 
 a {}
+a:link {}
+a:visited {}
 a:hover {}
+a:active {}
+a:focus {}
+
+input:focus {}
+input:enabled {}
+input:disabled {}
+input:checked {}
+input:indeterminate {} /* un-selected radio buttons :) */
+input:required {}
+input:valid {}
+input:invalid {}
+
+::-webkit-input-placeholder {}
+:-moz-placeholder {}
 
 
 /* ====================================================
@@ -91,67 +107,16 @@ a:hover {}
 
 /* ==|== Media Queries ======================================================
     PLACEHOLDER Media Queries for Responsive Design.
-    These override the primary ('mobile first') styles
     Modify as content requires.
+
+    Notes:
+    MOBILE FIRST - use min-width (lowest first) and style upwards
+    MOBILE RESPONSIVE - use max-width (highest first) and style downwards
+
+    Never set breakpoints for devices, only when the design requires it.
 ========================================================================== */
 
-
-/* HTML5 BOILERPLATE ======================================================== */
-
-/* Style adjustments for viewports 480px and over go here */
-@media only screen and (min-width: 480px) {}
-
-/* Style adjustments for viewports 768px and over go here */
-@media only screen and (min-width: 768px) {}
-
-
-
-/* TWITTER BOOTSTRAP 2.0 ==================================================== */
-
-/* Smartphones: Landscape and down (480px and below) */
-@media (max-width: 480px) {}
- 
-/* Landscape phone to portrait tablet (480px to 768px) */
-@media (max-width: 768px) {}
-
-/* Portrait tablet to landscape and desktop (768px to 980px)  */
-@media (min-width: 768px) and (max-width: 980px) {}
- 
-/* Large desktop */
-@media (min-width: 1200px) {}
-
-
-
-/* OTHER ONES FOUND ON THE WEB ============================================== */
-
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {}
-
-/* Smartphones (landscape) ----------- */
-@media only screen and (min-width : 321px) {}
-
-/* Smartphones (portrait) ----------- */
-@media only screen and (max-width : 320px) {}
-
-/* iPads (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {}
-
-/* iPads (landscape) ----------- */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {}
-
-/* iPads (portrait) ----------- */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {}
-
-/* Desktops and laptops ----------- */
-@media only screen and (min-width : 1224px) {}
-
-/* Large screens ----------- */
-@media only screen and (min-width : 1824px) {}
-
-/* iPhone 4 ----------- */
-@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {}
-
-
+@media (max-width: 1000px) {}
 
 
 /* ==|== print styles =======================================================
