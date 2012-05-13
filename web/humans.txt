@@ -1,19 +1,59 @@
-/* the humans responsible & colophon */
-/* humanstxt.org */
+   
+The humans.txt file explains the team, technology, and creative 
+assets behind this site.
+    
+_______________________________________________________________________________
 
+PEOPLE
 
-/* TEAM */
-	Front-end developer: Adam Brewer
-		Site: adamcbrewer.com
-		Twitter: @adamcbrewer
-		Location: London, UK
+Adam Brewer
+Front-end developer
+adamcbrewer.com / brewerlogic.com
+@adamcbrewer
 
+_______________________________________________________________________________
 
-/* THANKS */
-	Google, bacon, coffee
+TECHNOLOGY
 
+Launchpad
+https://github.com/adamcbrewer/launchpad
 
-/* SITE */
-	Standards: HTML5, CSS3
-	Components: Modernizr, Mootools, html5boilerplate
-	Software: Sublime Text 2, Firebug, Mercurial
+HTML5 Boilerplate
+http://html5boilerplate.com/
+
+LESS
+http://lesscss.org/
+
+Modernizr
+http://modernizr.com/
+
+jQuery
+http://jquery.com/
+
+MooTools
+http://mootools.net
+
+SMACSS
+http://smacss.com
+
+______________________________________________________________________________
+
+DEVELOPMENT ENVIRONMENT
+
+Sublime Text 2
+http://www.sublimetext.com/2
+
+BitBucket
+https://bitbucket.org/
+
+_______________________________________________________________________________
+
+FONTS
+
+_______________________________________________________________________________
+
+THANKS TO
+
+Google
+bacon
+coffee

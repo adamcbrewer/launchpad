@@ -107,11 +107,6 @@
 			
 	</div> <!-- #wrapper -->
 	
-	<!-- Grab Google mootools lib, fall back to local if offline -->
-	<script src="https://ajax.googleapis.com/ajax/libs/mootools/1.4.1/mootools-yui-compressed.js"></script>
-	<script>window.MooTools || document.write('<script src="assets/js/libs/mootools-core-1.4.1.min.js"><\/script>')</script>
-	<script src="assets/js/script.js"></script>
-
 	<script type="text/javascript" charset="utf-8">
 		/*
 		 * Init global object (for creating base_url methods, etc.)
@@ -129,6 +124,9 @@
 		b.setAttribute("data-useragent",  navigator.userAgent);
 		b.setAttribute("data-platform", navigator.platform );
 	</script>
+
+	<script src="assets/js/libs/mootools-core-1.4.1.min.js"></script>
+	<script src="assets/js/script.js"></script>
 
 
 	<!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
