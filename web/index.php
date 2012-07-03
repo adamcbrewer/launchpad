@@ -125,12 +125,12 @@
 		b.setAttribute("data-platform", navigator.platform );
 	</script>
 
-	<script src="assets/js/libs/mootools-core-1.4.1.min.js"></script>
+	<script src="assets/js/libs/jquery-1.7.2.min.js"></script>
 	<script src="assets/js/script.js"></script>
-
 
 	<script type="text/javascript">
 
+		/*
 		var _gaq = _gaq || [];
 		_gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
 		_gaq.push(['_trackPageview']);
@@ -140,8 +140,9 @@
 			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		})();
+		*/
 
 	</script>
-	
+
 </body>
 </html>
