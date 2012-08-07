@@ -75,7 +75,7 @@
 	<link href="assets/css/reset.css" rel="stylesheet"> <!-- reset with clearfix -->
 	<link href="assets/css/core.css" rel="stylesheet"> <!-- core stylesheet -->
 
-	<script src="assets/js/libs/modernizr-2.5.min.js"></script> <!-- Always check for latest version -->
+	<script src="assets/js/libs/modernizr-2.6.1.min.js"></script> <!-- Always check for latest version -->
 
 </head>
 <body>
