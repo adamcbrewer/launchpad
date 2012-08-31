@@ -1,3 +1,5 @@
 ## Static Node Server
 
-Contain a very quick setup for running a static node server to deliver standard HTML files and assets
+Contain a very quick setup for running a node server using Express and Socket.io.
+
+Includes a basic scipt for tracking client connections.

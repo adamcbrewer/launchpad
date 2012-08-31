@@ -1,0 +1,37 @@
+<!doctype html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Node Launchpad</title>
+
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+
+
+</head>
+<body>
+
+	<div id="wrapper">
+
+		<header id="header">
+
+			<h1>Hello, world!</h1>
+
+		</header> <!-- #header -->
+
+	</div> <!-- #wrapper -->
+
+	<script src="/socket.io/socket.io.js"></script>
+	<script>
+		var App = {
+			socket: io.connect('{{ basePath }}'),
+			channels: {
+				stats: io.connect('{{ basePath }}/stats')
+			},
+			basePath: '{{ basePath }}'
+		};
+
+	</script>
+
+</body>
+</html>
