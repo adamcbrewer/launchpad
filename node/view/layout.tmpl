@@ -7,7 +7,6 @@
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 
-
 </head>
 <body>
 
@@ -19,19 +18,29 @@
 
 		</header> <!-- #header -->
 
+		<section role="main" id="content">
+
+			<div id="floor" class="cf">
+
+			</div>
+
+		</section> <!-- #content -->
+
+		<footer id="footer">
+
+		</footer> <!-- #footer -->
+
 	</div> <!-- #wrapper -->
 
 	<script src="/socket.io/socket.io.js"></script>
 	<script>
 		var App = {
 			socket: io.connect('{{ basePath }}'),
-			channels: {
-				stats: io.connect('{{ basePath }}/stats')
-			},
 			basePath: '{{ basePath }}'
 		};
 
 	</script>
+	<script src="{{ siteurl }}/assets/js/script.js"></script>
 
 </body>
 </html>

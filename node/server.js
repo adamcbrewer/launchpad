@@ -4,8 +4,8 @@ var http = require('http'),
 	express = require('express'),
 	handlebars = require('handlebars'),
 
-	config = require('./config.js'),
-	Client = require('./models/client.js'),
+	config = require(__dirname + '/config.js'),
+	Client = require(__dirname + '/models/client.js'),
 	server = express(),
 
 	serverInst = http.createServer(server),
@@ -36,6 +36,7 @@ var http = require('http'),
 
 			this.clients.push(client);
 			console.log('-- LOG: The connected clients are: ' + this.clients.length);
+			this.broadcast({ message: 'hello you!'} , client, true);
 
 		},
 
@@ -83,11 +84,11 @@ var http = require('http'),
 					// We can send the default 'all' data to eveybody if we don't
 					// specify anything specifically for the original client
 					var dataClient = data.client || data.all;
-					client.socket.emit('update stats', { results: dataClient });
+					client.socket.emit('broadcast', { results: data });
 				}
 
 				// Send to everyone
-				client.socket.broadcast.emit('update stats', { results: data.all });
+				client.socket.broadcast.emit('broadcast', { results: data });
 			}
 
 		},
@@ -101,7 +102,7 @@ var http = require('http'),
 		//
 		loadTemplate: function (templateFile) {
 
-			var source = fs.readFileSync('./view/'+ templateFile, 'utf8', function (err, html) {
+			var source = fs.readFileSync(__dirname + '/view/'+ templateFile, 'utf8', function (err, html) {
 				if (err) throw err;
 				return html;
 			});
@@ -118,8 +119,10 @@ var http = require('http'),
 // to retreive the account changeset.
 serverInst.listen(config.serverPort);
 
-var publicDir = __dirname + 'public',
+var publicDir = __dirname + '/public',
 	assetsDir = publicDir + '/assets';
+
+console.log(assetsDir);
 
 // Route all our requested assets to the public assets directory
 server.use('/assets', express.static(assetsDir));
@@ -129,7 +132,8 @@ server.get('/*', function (req, res) {
 	var source = Server.loadTemplate('layout.tmpl'),
 		template = handlebars.compile(source),
 		view = template({
-			basePath: config.basePath
+			basePath: config.basePath,
+			siteurl: config.basePath + ':' + config.serverPort
 		});
 
 	res.send(view);
