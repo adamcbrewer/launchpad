@@ -4,8 +4,8 @@ Basic files for starting any new web build.
 
 Contains:
 
-* jQuery
-* Modernizr
+* jQuery 1.8.0
+* Modernizr - 2.6.1
 * LESS CSS starter file
 * Facebook Open Graph meta stuff
 * Javascript namespacing
