@@ -35,7 +35,7 @@
 	<link href="assets/css/reset.css" rel="stylesheet"> <? // reset with clearfix ?>
 	<link href="assets/css/core.css" rel="stylesheet"> <? // core stylesheet ?>
 
-	<script src="assets/js/libs/modernizr-2.6.1.min.js"></script> <? // Always check for latest version ?>
+	<script src="assets/js/libs/modernizr-2.6.2.custom.js"></script> <? // Always check for latest version ?>
 
 	<? // Async Google Analytics ?>
 	<script type="text/javascript">
@@ -56,8 +56,7 @@
 
 	</div> <!-- /wrapper -->
 
-	<script src="assets/js/libs/jquery-1.8.0.min.js"></script>
-	<script src="assets/js/script.js"></script>
+	<script src="assets/js/script.js" async defer></script>
 
 </body>
 </html>

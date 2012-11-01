@@ -1,11 +1,12 @@
 ## Web Bolierplate
 
-Basic files for starting any new web build.
+Basic files for starting new projects.
 
-Contains:
+Contains bits and whole peices form the following:
 
-* jQuery 1.8.0
-* Modernizr - 2.6.1
+* HTML5BP 4.0.1
+* jQuery 1.8.2
+* Modernizr - 2.6.2 custom
 * LESS CSS starter file
 * Facebook Open Graph meta stuff
 * Javascript namespacing
