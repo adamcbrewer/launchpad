@@ -16,7 +16,7 @@ PEOPLE
 
 Adam Brewer
 Front-end developer
-http://adamcbrewer.com / http://brewerlogic.com
+http://brewerlogic.com
 @adamcbrewer
 
 _______________________________________________________________________________
@@ -26,42 +26,21 @@ TECHNOLOGY
 Launchpad
 https://github.com/adamcbrewer/launchpad
 
-HTML5 Boilerplate
-http://html5boilerplate.com/
-
-LESS
-http://lesscss.org/
-
-CodeKit
-http://incident57.com/codekit/
-
-Modernizr
-http://modernizr.com/
-
-jQuery
-http://jquery.com/
-
-SMACSS
-http://smacss.com
+HTML5BP, LESS, CodeKit, Modernizr, jQuery, SMACSS
 
 ______________________________________________________________________________
 
 DEVELOPMENT ENVIRONMENT
 
-Sublime Text 2
-http://www.sublimetext.com/2
-
-BitBucket
-https://bitbucket.org/
+Sublime Text 2, Git
 
 _______________________________________________________________________________
 
 FONTS
 
+--
+
 _______________________________________________________________________________
 
 THANKS TO
 
-Google
-bacon
-coffee
