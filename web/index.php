@@ -50,7 +50,7 @@
 	</script>
 
 </head>
-<body data-base-url="<?= $_SERVER['HTTP_HOST'] ?>">
+<body data-base-url="http://<?= $_SERVER['HTTP_HOST'] ?>">
 
 	<div id="wrapper">
 

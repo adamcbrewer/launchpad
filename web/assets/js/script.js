@@ -13,7 +13,7 @@
 	 * objects belong in the global object
 	 *
 	 */
-	window.S = {
+	window.Site = {
 		basePath: document.body.getAttribute('data-base-url'),
 		userAgent: navigator.userAgent,
 		platform: navigator.platform
@@ -43,7 +43,7 @@
 	 */
 	Modernizr.load({
 		load: [
-			S.basePath + '/assets/js/libs/jquery-1.8.2.js'
+			Site.basePath + '/assets/js/libs/jquery-1.8.2.js'
 		],
 		complete: function () {
 

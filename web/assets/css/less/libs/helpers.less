@@ -1,0 +1,40 @@
+/* inline-block fix incl. ie7 support */
+.inline-box {
+	display: inline-block;
+	*display: block;
+	*zoom: 1;
+}
+
+.border-radius(@args) {
+      -webkit-border-radius: @args;
+         -moz-border-radius: @args;
+              border-radius: @args;
+
+    -webkit-background-clip: padding-box;
+       -moz-background-clip: padding;
+            background-clip: padding-box;
+}
+
+.linear-gradient(@args) {
+    background-image: -webkit-linear-gradient(@args);
+    background-image: -moz-linear-gradient(@args);
+    background-image: -ms-linear-gradient(@args);
+    background-image: -o-linear-gradient(@args);
+    background-image: linear-gradient(@args);
+}
+
+.transform(@args) {
+    -webkit-transform: @args;
+       -moz-transform: @args;
+        -ms-transform: @args;
+         -o-transform: @args;
+            transform: @args;
+}
+
+.transition(@args) {
+    -webkit-transition: @args;
+       -moz-transition: @args;
+        -ms-transition: @args;
+         -o-transition: @args;
+            transition: @args;
+}

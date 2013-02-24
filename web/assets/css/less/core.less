@@ -1,26 +1,15 @@
-/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-    core.css
-    Contains core styles
-    Created at:
-    Created by:
-
-    @credits
-    This site uses a modification on the SMACSS design - http://smacss.com/ - by @snookca
-
-
-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
-
 /* ====================================================
     LESS IMPORTS
 ==================================================== */
 
-@import "libs/css3.less";
+@import "libs/helpers.less";
+@import "libs/reset.less";
 
 
 
 
 /* ====================================================
-    LESS VARS
+    LESS VARIABLES
 ==================================================== */
 @c-bg: #FFF;
 @c-copy: #333;
@@ -39,10 +28,12 @@
 ==================================================== */
 
 * {
-    /* Paul Irish's suggestion: http://paulirish.com/2012/box-sizing-border-box-ftw/ */
-    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+    /* remove this if supporting ie7 */
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 
-    /* Chris Coyier's suggestions */
+    /* some defaults */
     background-repeat: no-repeat;
     vertical-align: middle;
 }
@@ -52,9 +43,14 @@
 ::selection { background:#333; color:#F8F8F8; text-shadow:none; }
 
 html, body { -web-font-smoothing: antialiased; }
+body {
+    width: 100%;
+    height: 100%;
+}
 
 ::-webkit-input-placeholder {}
 :-moz-placeholder {}
+
 [type=search] {
     /* resets webkit styling on search inputs */
     -webkit-appearance: none;
@@ -82,9 +78,6 @@ input:enabled {}
 input:disabled {}
 input:checked {}
 input:indeterminate {} /* un-selected radio buttons :) */
-
-::-webkit-input-placeholder {}
-:-moz-placeholder {}
 
 /* ====================================================
     LAYOUT STYLES
@@ -129,7 +122,7 @@ input:indeterminate {} /* un-selected radio buttons :) */
     Never set breakpoints for devices, only when the design requires it.
 ========================================================================== */
 
-@media (max-width: 1000px) {}
+
 
 
 /* ==|== print styles =======================================================
