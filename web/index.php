@@ -1,5 +1,4 @@
 <!doctype html>
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
@@ -32,7 +31,6 @@
 	<? // Remove 'initial-scale' to prevent mobile devices zooming-in ?>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link href="assets/css/reset.css" rel="stylesheet"> <? // reset with clearfix ?>
 	<link href="assets/css/core.css" rel="stylesheet"> <? // core stylesheet ?>
 
 	<script src="assets/js/libs/modernizr-2.6.2.custom.js"></script> <? // Always check for latest version ?>
@@ -54,7 +52,7 @@
 
 	<div id="wrapper">
 
-	</div> <!-- /wrapper -->
+	</div>
 
 	<script src="assets/js/script.js" async defer></script>
 
