@@ -11,7 +11,7 @@
 
 	<title></title>
 
-	<? // META ?>
+	<? // Meta ?>
 	<meta name="robots" content="all">
 
 	<link type="text/plain" rel="author" href="humans.txt" />
@@ -19,7 +19,7 @@
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 
-	<? // FACEBOOK OPEN GRAPH ?>
+	<? // Social sharing ?>
 	<meta property="og:title" content=""/> <? // subject title ?>
 	<meta property="og:type" content=""/> <? // More information: http://developers.facebook.com/docs/opengraph/ ?>
 	<meta property="og:image" content=""/> <? // image must be at least 50px by 50px with a maximum ratio of 3:1 ?>
@@ -50,7 +50,7 @@
 </head>
 <body data-base-url="http://<?= $_SERVER['HTTP_HOST'] ?>">
 
-	<div id="wrapper">
+	<div class="wrapper">
 
 	</div>
 
