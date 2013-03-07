@@ -2,14 +2,17 @@
 <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-<!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
-
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1,requiresActiveX=true">
+	<meta name="author" content="">
 
-	<title></title>
+	<? // Mobile viewport optimized: j.mp/bplateviewport ?>
+	<? // Remove 'initial-scale' to prevent mobile devices zooming-in ?>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Your New Project</title>
 
 	<? // Meta ?>
 	<meta name="robots" content="all">
@@ -26,10 +29,6 @@
 	<meta property="og:url" content=""/> <? // URL of the page being liked ?>
 	<meta property="og:site_name" content=""/> <? // A human-readable name for your site ?>
 	<meta property="og:description" content=""/> <? // basic site description ?>
-
-	<? // Mobile viewport optimized: j.mp/bplateviewport ?>
-	<? // Remove 'initial-scale' to prevent mobile devices zooming-in ?>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link href="assets/css/core.css" rel="stylesheet"> <? // core stylesheet ?>
 
