@@ -14,7 +14,9 @@
 @c-bg: #FFF;
 @c-copy: #333;
 
-
+@ff-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+@ff-serif: Baskerville, "utopia-std", "Hoefler Text", Georgia, Times, serif;
+@ff-mono: Monaco, Menlo, Consolas, "Courier New", monospace;
 
 
 /* ====================================================
@@ -43,9 +45,17 @@
 ::selection { background:#333; color:#F8F8F8; text-shadow:none; }
 
 html, body { -web-font-smoothing: antialiased; }
+html {
+    font-size: 62.5%;
+}
 body {
     width: 100%;
     height: 100%;
+    font-family: @ff-sans;
+    background-color: @c-bg;
+    color: @c-copy;
+    font-size: 1.4em; // 14 px
+    line-height: 1.5;
 }
 
 ::-webkit-input-placeholder {}
