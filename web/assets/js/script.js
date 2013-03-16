@@ -28,8 +28,8 @@
 	 *
 	 */
 	var b = document.documentElement;
-	b.setAttribute("data-useragent", S.userAgent);
-	b.setAttribute("data-platform", S.platform);
+	b.setAttribute("data-useragent", Site.userAgent);
+	b.setAttribute("data-platform", Site.platform);
 
 
 	/**
