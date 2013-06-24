@@ -8,10 +8,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-clean');
 
-    /**
-     * Project configuration.
-     *
-     */
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         watch: {
@@ -279,7 +275,7 @@ module.exports = function(grunt) {
      * pushing to master
      */
     grunt.registerTask('reset', [
-        'clean',
+        'clean'
     ]);
 
     /**
