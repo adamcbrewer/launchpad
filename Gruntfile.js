@@ -4,7 +4,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    // grunt.loadNpmTasks('grunt-modernizr');
+    grunt.loadNpmTasks('grunt-modernizr');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-clean');
 
@@ -192,9 +192,27 @@ module.exports = function(grunt) {
                 "domprefixes" : false
             },
             // By default, source is uglified before saving
-            "uglify" : true,
+            "uglify" : false,
             // Define any tests you want to impliticly include.
-            "tests" : [],
+            "tests" : [
+                "flexbox",
+                "boxshadow",
+                "opacity",
+                "localstorage",
+                "video",
+                "audio",
+                "canvas",
+                "rgba",
+                "flexbox",
+                "draganddrop",
+                "touch",
+                "cssanimations",
+                "csstransitions",
+                "csstransforms3d",
+                "csstransforms",
+                "cssgradients",
+                "backgroundsize"
+            ],
             // By default, this task will crawl your project for references to Modernizr tests.
             // Set to false to disable.
             "parseFiles" : true,
@@ -244,19 +262,7 @@ module.exports = function(grunt) {
                 "assets/js/plugins.js",
                 "assets/js/min"
             ]
-        },
-    });
-
-
-    grunt.registerTask('buildHtml', 'Init index.php with our settings', function () {
-        grunt.log.writeln('Currently running the "default" task.');
-        var template = grunt.file.read('index.tmpl', {}),
-            html = grunt.template.process(template, {
-                data: {
-                    title: 'this is a title'
-                }
-            })
-        grunt.file.write('index.php', html, {});
+        }
     });
 
 
@@ -266,8 +272,7 @@ module.exports = function(grunt) {
      */
     grunt.registerTask('default', [
         'copy:installFromBower',
-        'uglify:plugins',
-        'buildHtml'
+        'uglify:plugins'
     ]);
 
     /**
@@ -293,7 +298,8 @@ module.exports = function(grunt) {
      */
     grunt.registerTask('build:release', [
         'less:release',
-        'uglify:release'
+        'uglify:release',
+        'modernizr'
     ]);
 
     /**
