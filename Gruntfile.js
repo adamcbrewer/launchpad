@@ -6,6 +6,7 @@ module.exports = function(grunt) {
     // grunt.loadNpmTasks('grunt-contrib-watch');
     // grunt.loadNpmTasks('grunt-modernizr');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-clean');
 
 
     /**
@@ -66,7 +67,7 @@ module.exports = function(grunt) {
                     }
                 ]
             },
-            build: {
+            release: {
                 options: {
                     yuicompress: true,
                     compress: true
@@ -112,7 +113,7 @@ module.exports = function(grunt) {
 
             // Production-level code
             // TODO
-            build: {
+            release: {
                 options: {
                     banner: '/*!\n' +
                         ' * <%= pkg.name %> - <%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd H:MM:ss") %>\n' +
@@ -196,7 +197,17 @@ module.exports = function(grunt) {
                     }
                 ]
             }
-        }
+        },
+        clean: {
+            dev: [
+                "bower_components/*",
+                "!bower_components/.gitignore",
+                "assets/js/libs/*",
+                "!assets/js/libs/.gitignore",
+                "assets/js/plugins.js"
+            ],
+            release: []
+        },
     });
 
 
@@ -209,7 +220,7 @@ module.exports = function(grunt) {
         'copy:installFromBower',
         'uglify:plugins'
     ]);
-    // grunt.registerTask('dev', ['less:dev', 'watch:less']);
-    // grunt.registerTask('build', ['less:build', 'uglify:build']);
-
+    grunt.registerTask('build', ['less:dev', 'uglify:dev']);
+    grunt.registerTask('build:release', ['less:release', 'uglify:release']);
+    grunt.registerTask('build:watch', ['less:dev', 'watch:less']);
 };
