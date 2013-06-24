@@ -1,13 +1,12 @@
 module.exports = function(grunt) {
 
     // Load the all the plugins that Grunt requires
-    // grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    // grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-watch');
     // grunt.loadNpmTasks('grunt-modernizr');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-clean');
-
 
     /**
      * Project configuration.
@@ -16,33 +15,43 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         watch: {
-            all: {
-                files: ['**/*.js', '**/*.less'],
+            // all: {
+            //     files: ['**/*.js', '**/*.less'],
+            //     tasks: [
+            //         'livereload',
+            //         'less:dev'
+            //     ],
+            //     options: {
+            //         nospawn: true,
+            //     }
+            // },
+            // js: {
+            //     files: ['**/*.js'],
+            //     tasks: [
+            //         // 'livereload'
+            //     ],
+            //     options: {
+            //         nospawn: true,
+            //     }
+            // },
+            plugins: {
+                files: ['assets/js/plugins/*.js'],
                 tasks: [
-                    'livereload',
-                    'less:dev'
+                    'uglify:plugins'
                 ],
                 options: {
                     nospawn: true,
-                }
-            },
-            js: {
-                files: ['**/*.js'],
-                tasks: [
-                    // 'livereload'
-                ],
-                options: {
-                    nospawn: true,
+                    livereload: true  // not working in Chrome 27?
                 }
             },
             less: {
                 files: ['**/*.less'],
                 tasks: [
-                    // 'livereload',
                     'less:dev'
                 ],
                 options: {
-                    nospawn: true
+                    nospawn: true,
+                    livereload: true // not working in Chrome 27?
                 }
             }
         },
@@ -85,11 +94,9 @@ module.exports = function(grunt) {
             }
         },
         uglify: {
+
             // Compile all plugins into a single file.
             // Run this each time a file is added to the directory.
-            //
-            // TODO:
-            // run this with grunt-contrib-watch
             plugins: {
                 options: {
                     banner: '/*!\n' +
@@ -111,12 +118,38 @@ module.exports = function(grunt) {
                 ]
             },
 
+            // Development-level code
+            dev: {
+                options: {
+                    banner: '/*!\n' +
+                        ' * <%= pkg.name %> - <%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd H:MM:ss") %>\n' +
+                        ' * Development\n' +
+                        ' * https://github.com/adamcbrewer/launchpad\n *\n' +
+                        ' */\n',
+                    compress: false,
+                    preserveComments: true,
+                    mangle: false,
+                    beautify: true,
+                    report: 'min'
+                },
+                files: [
+                    {
+                        src: [
+                            'assets/js/libs/jquery.js',
+                            'assets/js/plugins.js',
+                            'assets/js/script.js',
+                        ],
+                        dest: 'assets/js/min/script.dev.min.js'
+                    }
+                ]
+            },
+
             // Production-level code
-            // TODO
             release: {
                 options: {
                     banner: '/*!\n' +
                         ' * <%= pkg.name %> - <%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd H:MM:ss") %>\n' +
+                        ' * Release\n' +
                         ' * https://github.com/adamcbrewer/launchpad\n *\n' +
                         ' */\n',
                     compress: true,
@@ -127,9 +160,11 @@ module.exports = function(grunt) {
                 files: [
                     {
                         src: [
-                            'assets/js/script.js'
+                            'assets/js/libs/jquery.js',
+                            'assets/js/plugins.js',
+                            'assets/js/script.js',
                         ],
-                        dest: 'assets/js/min/script.build.min.js'
+                        dest: 'assets/js/min/script.release.min.js'
                     }
                 ]
             }
@@ -199,28 +234,78 @@ module.exports = function(grunt) {
             }
         },
         clean: {
-            dev: [
+            default: [
                 "bower_components/*",
                 "!bower_components/.gitignore",
                 "assets/js/libs/*",
                 "!assets/js/libs/.gitignore",
-                "assets/js/plugins.js"
+                "assets/js/plugins.js",
+                "assets/js/min"
             ],
-            release: []
+            scripts: [
+                "assets/js/libs/*",
+                "!assets/js/libs/.gitignore",
+                "assets/js/plugins.js",
+                "assets/js/min"
+            ]
         },
+    });
+
+
+    grunt.registerTask('buildHtml', 'Init index.php with our settings', function () {
+        grunt.log.writeln('Currently running the "default" task.');
+        var template = grunt.file.read('index.tmpl', {}),
+            html = grunt.template.process(template, {
+                data: {
+                    title: 'this is a title'
+                }
+            })
+        grunt.file.write('index.php', html, {});
     });
 
 
     /**
      * default tasks when Grunt is run
      * without any arguments
-     *
      */
     grunt.registerTask('default', [
         'copy:installFromBower',
-        'uglify:plugins'
+        'uglify:plugins',
+        'buildHtml'
     ]);
-    grunt.registerTask('build', ['less:dev', 'uglify:dev']);
-    grunt.registerTask('build:release', ['less:release', 'uglify:release']);
-    grunt.registerTask('build:watch', ['less:dev', 'watch:less']);
+
+    /**
+     * Revert and tests carried out before
+     * pushing to master
+     */
+    grunt.registerTask('reset', [
+        'clean',
+    ]);
+
+    /**
+     * Generate a buiild of the app
+     * still in development
+     */
+    grunt.registerTask('build', [
+        'less:dev',
+        'uglify:dev'
+    ]);
+
+    /**
+     * Build a release/production/enterprise version
+     * of all scripts and files
+     */
+    grunt.registerTask('build:release', [
+        'less:release',
+        'uglify:release'
+    ]);
+
+    /**
+     * Live developing
+     *
+     */
+    grunt.registerTask('dev', [
+        'less:dev', // so we have the latest when first loading the site
+        'watch:less'
+    ]);
 };
