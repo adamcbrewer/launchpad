@@ -38,18 +38,4 @@
 	 */
 
 
-	/**
-	 * Async script loading
-	 */
-	Modernizr.load({
-		load: [
-			Site.basePath + '/assets/js/libs/jquery-1.8.2.js'
-		],
-		complete: function () {
-
-			// do stuff
-
-		}
-	});
-
 }(Modernizr, window, document));

@@ -22,7 +22,7 @@ TECHNOLOGY
 Launchpad
 https://github.com/adamcbrewer/launchpad
 
-HTML5BP, LESS, CodeKit, Modernizr, jQuery, SMACSS
+HTML5BP, LESS, CodeKit, Modernizr, jQuery, SMACSS, Grunt.js, Bower.js
 
 ______________________________________________________________________________
 

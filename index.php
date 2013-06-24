@@ -32,7 +32,7 @@
 
 	<link href="assets/css/core.css" rel="stylesheet"> <? // core stylesheet ?>
 
-	<script src="assets/js/libs/modernizr-2.6.2.custom.js"></script> <? // Always check for latest version ?>
+	<script src="assets/js/libs/modernizr.js"></script> <? // Always check for latest version ?>
 
 	<?
 		// Async Google Analytics
@@ -55,6 +55,8 @@
 
 	</div>
 
+	<script src="assets/js/libs/jquery.js"></script>
+	<script src="assets/js/plugins.js"></script>
 	<script src="assets/js/script.js"></script>
 
 </body>
