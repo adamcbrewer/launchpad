@@ -195,6 +195,7 @@ module.exports = function(grunt) {
             "uglify" : false,
             // Define any tests you want to impliticly include.
             "tests" : [
+                /*
                 "flexbox",
                 "boxshadow",
                 "opacity",
@@ -212,6 +213,7 @@ module.exports = function(grunt) {
                 "csstransforms",
                 "cssgradients",
                 "backgroundsize"
+                */
             ],
             // By default, this task will crawl your project for references to Modernizr tests.
             // Set to false to disable.
@@ -219,8 +221,8 @@ module.exports = function(grunt) {
             // When parseFiles = true, this task will crawl all *.js, *.css, *.scss files, except files that are in node_modules/.
             // You can override this by defining a "files" array below.
             "files" : [
-                '*.js',
-                '*.less'
+                'assets/js/*.js',
+                'assets/css/less/*.less'
             ],
             "excludeFiles": [],
             // When parseFiles = true, matchCommunityTests = true will attempt to
