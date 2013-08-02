@@ -1,54 +1,36 @@
 module.exports = function(grunt) {
 
     // Load the all the plugins that Grunt requires
-    grunt.loadNpmTasks('grunt-contrib-less');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-modernizr');
-    grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-contrib-clean');
+    require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         watch: {
-            // all: {
-            //     files: ['**/*.js', '**/*.less'],
-            //     tasks: [
-            //         'livereload',
-            //         'less:dev'
-            //     ],
-            //     options: {
-            //         nospawn: true,
-            //     }
-            // },
-            // js: {
-            //     files: ['**/*.js'],
-            //     tasks: [
-            //         // 'livereload'
-            //     ],
-            //     options: {
-            //         nospawn: true,
-            //     }
-            // },
-            plugins: {
-                files: ['assets/js/plugins/*.js'],
-                tasks: [
-                    'uglify:plugins'
+            options: { nospawn: true },
+            env: {
+                // environment files and markup pages
+                files: [
+                    "Gruntfile.js",
+                    "*.php"
                 ],
-                options: {
-                    nospawn: true,
-                    livereload: true  // not working in Chrome 27?
-                }
+                options: { livereload: true },
+                tasks: []
+            },
+            js: {
+                files: [
+                    'assets/js/plugins/*.js',
+                    'assets/js/libs/*.js',
+                    'assets/js/*.js'
+                ],
+                options: { livereload: true },
+                tasks: ['uglify:development']
             },
             less: {
-                files: ['**/*.less'],
-                tasks: [
-                    'less:dev'
+                files: [
+                    'assets/css/less/*.less'
                 ],
-                options: {
-                    nospawn: true,
-                    livereload: true // not working in Chrome 27?
-                }
+                options: { livereload: true },
+                tasks: ['less:development']
             }
         },
 
@@ -56,7 +38,7 @@ module.exports = function(grunt) {
         // The difference between the production level is the
         // level of compression
         less: {
-            dev: {
+            development: {
                 options: {
                     yuicompress: false,
                     compress: false
@@ -72,7 +54,7 @@ module.exports = function(grunt) {
                     }
                 ]
             },
-            release: {
+            production: {
                 options: {
                     yuicompress: true,
                     compress: true
@@ -115,7 +97,7 @@ module.exports = function(grunt) {
             },
 
             // Development-level code
-            dev: {
+            development: {
                 options: {
                     banner: '/*!\n' +
                         ' * <%= pkg.name %> - <%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd H:MM:ss") %>\n' +
@@ -141,7 +123,7 @@ module.exports = function(grunt) {
             },
 
             // Production-level code
-            release: {
+            production: {
                 options: {
                     banner: '/*!\n' +
                         ' * <%= pkg.name %> - <%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd H:MM:ss") %>\n' +
@@ -167,6 +149,7 @@ module.exports = function(grunt) {
         },
         // TODO
         // All of this
+        // This should build a custom version of modernizr
         modernizr: {
             // [REQUIRED] Path to the build you're using for development.
             "devFile" : "assets/js/libs/modernizr.js",
@@ -267,49 +250,20 @@ module.exports = function(grunt) {
         }
     });
 
-
-    /**
-     * default tasks when Grunt is run
-     * without any arguments
-     */
     grunt.registerTask('default', [
-        'copy:installFromBower',
-        'uglify:plugins'
+        'watch'
     ]);
 
-    /**
-     * Revert and tests carried out before
-     * pushing to master
-     */
+    // prep files for production
+    grunt.registerTask('build', [
+        'modernizr',
+        'less:production',
+        'uglify:production'
+    ]);
+
+    // Clean up files (testing)
     grunt.registerTask('reset', [
         'clean'
     ]);
 
-    /**
-     * Generate a buiild of the app
-     * still in development
-     */
-    grunt.registerTask('build', [
-        'less:dev',
-        'uglify:dev'
-    ]);
-
-    /**
-     * Build a release/production/enterprise version
-     * of all scripts and files
-     */
-    grunt.registerTask('build:release', [
-        'less:release',
-        'uglify:release',
-        'modernizr'
-    ]);
-
-    /**
-     * Live developing
-     *
-     */
-    grunt.registerTask('dev', [
-        'less:dev', // so we have the latest when first loading the site
-        'watch:less'
-    ]);
 };
