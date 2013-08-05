@@ -117,7 +117,7 @@ module.exports = function(grunt) {
                             'assets/js/plugins.js',
                             'assets/js/script.js',
                         ],
-                        dest: 'assets/js/min/script.dev.min.js'
+                        dest: 'assets/js/min/script.min.js'
                     }
                 ]
             },
@@ -142,7 +142,7 @@ module.exports = function(grunt) {
                             'assets/js/plugins.js',
                             'assets/js/script.js',
                         ],
-                        dest: 'assets/js/min/script.release.min.js'
+                        dest: 'assets/js/min/script.min.js'
                     }
                 ]
             }
