@@ -11,7 +11,13 @@
 
 	<meta name="robots" content="all">
 	<link type="text/plain" rel="author" href="/humans.txt" />
+
+	<!-- Favicons -->
 	<link rel="icon" type="image/png" href="/assets/img/favicon.ico">
+	<!-- Have a look here for any further favicon options you might need -->
+	<!-- https://github.com/audreyr/favicon-cheat-sheet -->
+
+
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 
