@@ -34,3 +34,4 @@ Thumbs.db
 # Other files
 # #####################
 node_modules
+bower_components

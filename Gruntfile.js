@@ -5,6 +5,14 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        notify: {
+            watch: {
+                options: {
+                    title: 'Watching…',
+                    message: '…all the files'
+                }
+            }
+        },
         watch: {
             options: { nospawn: true },
             env: {
@@ -251,6 +259,7 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('default', [
+        'notify',
         'watch'
     ]);
 
