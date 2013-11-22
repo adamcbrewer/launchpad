@@ -3,15 +3,12 @@
   "version": "0.1.0",
   "dependencies": {},
   "devDependencies": {
-    "grunt-modernizr": "~0.3.0",
-    "grunt-contrib-copy": "~0.4.1",
+    "grunt": "~0.4.2",
+    "matchdep": "~0.1.2",
+    "grunt-notify": "~0.2.13",
     "grunt-contrib-uglify": "~0.2.2",
     "grunt-contrib-watch": "~0.4.4",
-    "grunt-contrib-less": "~0.6.1",
-    "grunt-contrib-clean": "~0.4.1",
-    "grunt": "~0.4.1",
-    "matchdep": "~0.1.2",
-    "grunt-notify": "~0.2.13"
+    "grunt-contrib-sass": "~0.5.0"
   },
   "engines": {
     "node": ">=0.8.0"

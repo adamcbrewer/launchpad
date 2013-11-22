@@ -2,9 +2,7 @@
  * Author:
  *
  */
-
-// Semi-colon for concatenation safety
-;(function(M, window, document, undefined){
+;(function(window, document, undefined){
 
 	/**
 	 * Name-spacing
@@ -33,9 +31,9 @@
 
 
 	/**
-	 * Your functions here
+	 * Custom functions here
 	 *
 	 */
 
 
-}(Modernizr, window, document));
+}(window, document));
